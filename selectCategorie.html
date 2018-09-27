@@ -70,35 +70,45 @@
 
 
 		<section class="blog-single">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8">
-						<div class="single-blog">
-							<a href="#"><h3>Trouvez les formations et écoles en vogues sur vos domaines recherchés</h3></a>
-							<img src="img/blog-image.jpg" alt="Blog Image" />
-
-
-						</div>
-
-
-
-						<!-- Pagination -->
-						<!-- Pagination -->
-
-					</div>
-
-					<!-- Right Sidebar -->
-					<div class="col-md-4">
-            <SELECT name="nom" size="1">
-  <OPTION>lundi
-  <OPTION>mardi
-  <OPTION>mercredi
-  <OPTION>jeudi
-  <OPTION>vendredi
-  </SELECT>
-					</div>
-				</div>
-			</div>
+      <div class="col-md-4">
+        <aside class="right-sidebar">
+          <div class="widget">
+            <br><br>
+            <br><br>
+ <br><br>
+<br><br>
+<br><br>
+            <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true">Choisissez votre catégorie</a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" aria-expanded="true" style="">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <div onclick="gotoResultPage()">Informatique</div>
+            </div>
+            </div>
+          </div>
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true">Choisissez votre localisation</a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse in" aria-expanded="true" style="">
+            <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <div onclick="gotoResultPage()">Toulouse</div>
+          </div>
+          </div>
+        </div>
+            </div>
+          </div>
+          </aside>
+      </div>
 		</section>
 
 
@@ -117,5 +127,16 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
         </script>
+        <script>
+          function gotoResultPage() {
+            let urlParams = new URLSearchParams(window.location.search);
+            let categorie = urlParams.get('categorie');
+            console.log(categorie);
+            if (categorie=="Ecole")
+              window.location='ResultatEcole.html'
+            else
+              window.location='ResultatEntreprise.html'
+          }
+      </script>
     </body>
 </html>
